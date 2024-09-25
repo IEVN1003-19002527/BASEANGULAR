@@ -1,0 +1,18 @@
+<div>
+    <h1>Operaciones</h1>
+
+    
+    <form>
+        <div class="mb-3">
+            <label for="numero1" class="form-label">Primer número</label>
+            <input type="number" class="form-control" [(ngModel)]="num1" id="numero1" placeholder="Ingrese el primer número">
+        </div>
+        <div class="mb-3">
+            <label for="numero2" class="form-label">Segundo número</label>
+            <input type="number" class="form-control" [(ngModel)]="num2" id="numero2" placeholder="Ingrese el segundo número">
+        </div>
+        <button (click)="sumar()" type="submit" class="btn btn-primary">Calcular</button>
+    </form>
+</div>
+
+<h2>resultado es: {{resultado}}</h2>

@@ -1,0 +1,71 @@
+<!-- app.component.html -->
+<div style="text-align: center;">
+    <h1>Resistor Color Code Calculator</h1>
+  
+    <!-- Primera Banda -->
+    <div>
+      <label for="color1">Primera Banda</label>
+      <select id="color1" [(ngModel)]="color1">
+        <option *ngFor="let color of colors" [value]="color">{{color}}</option>
+      </select>
+    </div>
+  
+    <!-- Segunda Banda -->
+    <div>
+      <label for="color2">Segunda Banda</label>
+      <select id="color2" [(ngModel)]="color2">
+        <option *ngFor="let color of colors" [value]="color">{{color}}</option>
+      </select>
+    </div>
+  
+    <!-- Tercera Banda -->
+    <div>
+      <label for="color3">Tercera Banda</label>
+      <select id="color3" [(ngModel)]="color3">
+        <option *ngFor="let color of colors" [value]="color">{{color}}</option>
+      </select>
+    </div>
+  
+    <!-- Tolerancia -->
+    <div>
+      <p>Tolerancia</p>
+      <label>
+        <input type="radio" name="tolerancia" [(ngModel)]="tolerancia" value="oro"> Oro
+      </label>
+      <label>
+        <input type="radio" name="tolerancia" [(ngModel)]="tolerancia" value="plata"> Plata
+      </label>
+    </div>
+  
+    <!-- Botón de Registrar -->
+    <button (click)="calcular()">Registrar</button>
+  
+    <!-- Resultados -->
+    <div *ngIf="resultado">
+      <table border="1" style="margin-top: 20px;">
+        <thead>
+          <tr>
+            <th>Color1</th>
+            <th>Color2</th>
+            <th>Color3</th>
+            <th>Tolerancia</th>
+            <th>Valor</th>
+            <th>Valor Máximo</th>
+            <th>Valor Mínimo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{color1}}</td>
+            <td>{{color2}}</td>
+            <td>{{color3}}</td>
+            <td>{{tolerancia}} 5%</td>
+            <td>{{valor}}</td>
+            <td>{{valorMaximo}}</td>
+            <td>{{valorMinimo}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
